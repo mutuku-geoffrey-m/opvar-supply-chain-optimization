@@ -22,23 +22,3 @@ Moved beyond Excel "averages" to model the full distribution of risk:
 ## 💻 How to Run
 1. Install dependencies: `pip install -r requirements.txt`
 2. Run the simulation: `python simulation.py`
-
-#### **2. LinkedIn Post Description**
-When posting, focus on the *story* (the conflict) rather than just the code.
-
-**Draft Post:**
-> **Headline:** Excel averages lie. Distributions tell the truth. 📉
->
-> I recently deployed a Monte Carlo simulation to resolve a standoff between a CFO and Supply Chain Director.
->
-> **The Problem:** High interest rates were eating margins. The CFO wanted to slash inventory by $2M. The SC Director refused, citing volatile lead times at the Port of Mombasa. Neither was wrong, but their static Excel models couldn't quantify the trade-off.
->
-> **The Fix:** I built a Python model to simulate 10,000 future scenarios, capturing the "long tail" risks of port delays that averages miss.
->
-> **The Result:** We found the "Efficient Frontier"—we could safely release **$1.5M** in cash (a 15% cut) while maintaining a 98.5% service level. Beyond that point, the risk curve went vertical.
->
-> It wasn't just about coding; it was about using data to find the safe zone between liquidity and risk.
->
-> Check out the code and the "Risk Curve" visualization on GitHub: [Link to Repo]
->
-> #SupplyChain #Python #DataScience #Logistics #FinOps #Nairobi
