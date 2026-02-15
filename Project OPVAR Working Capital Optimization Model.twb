@@ -1,0 +1,1442 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.1003.1601                               -->
+<workbook original-version='18.1' source-build='2025.2.4 (20252.25.1003.1601)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='ProjectOPVARWorkingCapitalOptimizationModel' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='OpVaR_Simulation_Results_CLEAN' inline='true' name='federated.0m6xe2v1yfmif917v4vo30o95iyk' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='OpVaR_Simulation_Results_CLEAN' name='textscan.1bn6ezo0ldj5lp1c1a4tc0c9lff5'>
+            <connection class='textscan' directory='C:/Users/jeffm/OneDrive/Desktop/projects/OpVaR Optimizing Liquidity vs. Risk' filename='OpVaR_Simulation_Results_CLEAN.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1bn6ezo0ldj5lp1c1a4tc0c9lff5' name='OpVaR_Simulation_Results_CLEAN.csv' table='[OpVaR_Simulation_Results_CLEAN#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='real' name='Scenario_Cut_Percentage' ordinal='0' />
+            <column datatype='integer' name='Cash_Released_USD' ordinal='1' />
+            <column datatype='real' name='Stockout_Risk_Percent' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[OpVaR_Simulation_Results_CLEAN.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;£&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Scenario_Cut_Percentage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Scenario_Cut_Percentage]</local-name>
+            <parent-name>[OpVaR_Simulation_Results_CLEAN.csv]</parent-name>
+            <remote-alias>Scenario_Cut_Percentage</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[OpVaR_Simulation_Results_CLEAN.csv_A340DA3E09214ECC926615860DE9651C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cash_Released_USD</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Cash_Released_USD]</local-name>
+            <parent-name>[OpVaR_Simulation_Results_CLEAN.csv]</parent-name>
+            <remote-alias>Cash_Released_USD</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[OpVaR_Simulation_Results_CLEAN.csv_A340DA3E09214ECC926615860DE9651C]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Stockout_Risk_Percent</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Stockout_Risk_Percent]</local-name>
+            <parent-name>[OpVaR_Simulation_Results_CLEAN.csv]</parent-name>
+            <remote-alias>Stockout_Risk_Percent</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[OpVaR_Simulation_Results_CLEAN.csv_A340DA3E09214ECC926615860DE9651C]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Cash Released USD' datatype='integer' name='[Cash_Released_USD]' role='measure' type='quantitative' />
+      <column caption='Scenario Cut Percentage' datatype='real' name='[Scenario_Cut_Percentage]' role='measure' type='quantitative' />
+      <column caption='Stockout Risk Percent' datatype='real' name='[Stockout_Risk_Percent]' role='measure' type='quantitative' />
+      <column caption='OpVaR_Simulation_Results_CLEAN.csv' datatype='table' name='[__tableau_internal_object_id__].[OpVaR_Simulation_Results_CLEAN.csv_A340DA3E09214ECC926615860DE9651C]' role='measure' type='quantitative' />
+      <column-instance column='[Stockout_Risk_Percent]' derivation='Avg' name='[avg:Stockout_Risk_Percent:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Stockout_Risk_Percent]' derivation='Max' name='[max:Stockout_Risk_Percent:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Cash_Released_USD]' derivation='Sum' name='[sum:Cash_Released_USD:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Stockout_Risk_Percent]' derivation='Sum' name='[sum:Stockout_Risk_Percent:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/jeffm/AppData/Local/Temp/TableauTemp/#TableauTemp_09j7tqw1jkbxk81gntqet1unjdnt.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='02/15/2026 10:33:45 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Scenario_Cut_Percentage</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Scenario_Cut_Percentage]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Scenario_Cut_Percentage</remote-alias>
+              <ordinal>0</ordinal>
+              <family>OpVaR_Simulation_Results_CLEAN.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Cash_Released_USD</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Cash_Released_USD]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Cash_Released_USD</remote-alias>
+              <ordinal>1</ordinal>
+              <family>OpVaR_Simulation_Results_CLEAN.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Stockout_Risk_Percent</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Stockout_Risk_Percent]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Stockout_Risk_Percent</remote-alias>
+              <ordinal>2</ordinal>
+              <family>OpVaR_Simulation_Results_CLEAN.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Cash_Released_USD:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0m6xe2v1yfmif917v4vo30o95iyk].[avg:Stockout_Risk_Percent:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0m6xe2v1yfmif917v4vo30o95iyk].[max:Stockout_Risk_Percent:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Stockout_Risk_Percent:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Kenya&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='OpVaR_Simulation_Results_CLEAN.csv' id='OpVaR_Simulation_Results_CLEAN.csv_A340DA3E09214ECC926615860DE9651C'>
+            <properties context=''>
+              <relation connection='textscan.1bn6ezo0ldj5lp1c1a4tc0c9lff5' name='OpVaR_Simulation_Results_CLEAN.csv' table='[OpVaR_Simulation_Results_CLEAN#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+                  <column datatype='real' name='Scenario_Cut_Percentage' ordinal='0' />
+                  <column datatype='integer' name='Cash_Released_USD' ordinal='1' />
+                  <column datatype='real' name='Stockout_Risk_Percent' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='OpVaR_Simulation_Results' inline='true' name='federated.0rt27ul1fbknfd11d6wkp15r94qe' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='OpVaR_Simulation_Results' name='textscan.18775wu0pja8u31ewnb8v00z8zvw'>
+            <connection class='textscan' directory='C:/Users/jeffm/OneDrive/Desktop/projects/OpVaR Optimizing Liquidity vs. Risk' filename='OpVaR_Simulation_Results.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.18775wu0pja8u31ewnb8v00z8zvw' name='OpVaR_Simulation_Results.csv' table='[OpVaR_Simulation_Results#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+            <column datatype='real' name='Scenario_Cut_Percentage' ordinal='0' />
+            <column datatype='real' name='Cash_Released_USD' ordinal='1' />
+            <column datatype='real' name='Stockout_Risk_Percent' ordinal='2' />
+            <column datatype='string' name='Risk_Rating' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[OpVaR_Simulation_Results.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;£&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Scenario_Cut_Percentage</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Scenario_Cut_Percentage]</local-name>
+            <parent-name>[OpVaR_Simulation_Results.csv]</parent-name>
+            <remote-alias>Scenario_Cut_Percentage</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[OpVaR_Simulation_Results.csv_4AC2C77C29D5446D99FB5AAE838E54AE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cash_Released_USD</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Cash_Released_USD]</local-name>
+            <parent-name>[OpVaR_Simulation_Results.csv]</parent-name>
+            <remote-alias>Cash_Released_USD</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[OpVaR_Simulation_Results.csv_4AC2C77C29D5446D99FB5AAE838E54AE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Stockout_Risk_Percent</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Stockout_Risk_Percent]</local-name>
+            <parent-name>[OpVaR_Simulation_Results.csv]</parent-name>
+            <remote-alias>Stockout_Risk_Percent</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[OpVaR_Simulation_Results.csv_4AC2C77C29D5446D99FB5AAE838E54AE]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Risk_Rating</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Risk_Rating]</local-name>
+            <parent-name>[OpVaR_Simulation_Results.csv]</parent-name>
+            <remote-alias>Risk_Rating</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[OpVaR_Simulation_Results.csv_4AC2C77C29D5446D99FB5AAE838E54AE]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Cash Released USD' datatype='real' name='[Cash_Released_USD]' role='measure' type='quantitative' />
+      <column caption='Risk Rating' datatype='string' name='[Risk_Rating]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Scenario Cut Percentage' datatype='real' name='[Scenario_Cut_Percentage]' role='dimension' type='ordinal' />
+      <column caption='Stockout Risk Percent' datatype='real' name='[Stockout_Risk_Percent]' role='measure' type='quantitative' />
+      <column caption='OpVaR_Simulation_Results.csv' datatype='table' name='[__tableau_internal_object_id__].[OpVaR_Simulation_Results.csv_4AC2C77C29D5446D99FB5AAE838E54AE]' role='measure' type='quantitative' />
+      <column-instance column='[Stockout_Risk_Percent]' derivation='Avg' name='[avg:Stockout_Risk_Percent:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Cash_Released_USD]' derivation='Sum' name='[sum:Cash_Released_USD:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Stockout_Risk_Percent]' derivation='Sum' name='[sum:Stockout_Risk_Percent:qk]' pivot='key' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/jeffm/AppData/Local/Temp/TableauTemp/#TableauTemp_01sgs4e1k37q4a12u9z9g1gtk071.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='02/15/2026 09:33:31 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Scenario_Cut_Percentage</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Scenario_Cut_Percentage]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Scenario_Cut_Percentage</remote-alias>
+              <ordinal>0</ordinal>
+              <family>OpVaR_Simulation_Results.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[OpVaR_Simulation_Results.csv_4AC2C77C29D5446D99FB5AAE838E54AE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Cash_Released_USD</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Cash_Released_USD]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Cash_Released_USD</remote-alias>
+              <ordinal>1</ordinal>
+              <family>OpVaR_Simulation_Results.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[OpVaR_Simulation_Results.csv_4AC2C77C29D5446D99FB5AAE838E54AE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Stockout_Risk_Percent</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Stockout_Risk_Percent]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Stockout_Risk_Percent</remote-alias>
+              <ordinal>2</ordinal>
+              <family>OpVaR_Simulation_Results.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[OpVaR_Simulation_Results.csv_4AC2C77C29D5446D99FB5AAE838E54AE]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Risk_Rating</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Risk_Rating]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Risk_Rating</remote-alias>
+              <ordinal>3</ordinal>
+              <family>OpVaR_Simulation_Results.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[OpVaR_Simulation_Results.csv_4AC2C77C29D5446D99FB5AAE838E54AE]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0rt27ul1fbknfd11d6wkp15r94qe].[sum:Cash_Released_USD:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0rt27ul1fbknfd11d6wkp15r94qe].[avg:Stockout_Risk_Percent:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.0rt27ul1fbknfd11d6wkp15r94qe].[sum:Stockout_Risk_Percent:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Kenya&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='OpVaR_Simulation_Results.csv' id='OpVaR_Simulation_Results.csv_4AC2C77C29D5446D99FB5AAE838E54AE'>
+            <properties context=''>
+              <relation connection='textscan.18775wu0pja8u31ewnb8v00z8zvw' name='OpVaR_Simulation_Results.csv' table='[OpVaR_Simulation_Results#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_GB' separator=','>
+                  <column datatype='real' name='Scenario_Cut_Percentage' ordinal='0' />
+                  <column datatype='real' name='Cash_Released_USD' ordinal='1' />
+                  <column datatype='real' name='Stockout_Risk_Percent' ordinal='2' />
+                  <column datatype='string' name='Risk_Rating' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='KPI Cash'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='OpVaR_Simulation_Results_CLEAN' name='federated.0m6xe2v1yfmif917v4vo30o95iyk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0m6xe2v1yfmif917v4vo30o95iyk'>
+            <column caption='Cash Released USD' datatype='integer' name='[Cash_Released_USD]' role='measure' type='quantitative' />
+            <column caption='Scenario Cut Percentage' datatype='real' name='[Scenario_Cut_Percentage]' role='measure' type='quantitative' />
+            <column-instance column='[Scenario_Cut_Percentage]' derivation='None' name='[none:Scenario_Cut_Percentage:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Cash_Released_USD]' derivation='Sum' name='[sum:Cash_Released_USD:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[none:Scenario_Cut_Percentage:ok]'>
+            <groupfilter function='member' level='[none:Scenario_Cut_Percentage:ok]' member='0.14999999999999999' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0m6xe2v1yfmif917v4vo30o95iyk].[none:Scenario_Cut_Percentage:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Cash_Released_USD:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontcolor='#818b91' fontname='Tableau Bold' fontsize='26'><![CDATA[<[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Cash_Released_USD:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#818b91' fontname='Tableau Bold' fontsize='10'>Potential Liquidity Unlock (at 15% Cut)</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{1BAA2870-16BB-4416-B2A9-6EFA0135B26A}' />
+    </worksheet>
+    <worksheet name='KPI Risk'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='OpVaR_Simulation_Results_CLEAN' name='federated.0m6xe2v1yfmif917v4vo30o95iyk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0m6xe2v1yfmif917v4vo30o95iyk'>
+            <column caption='Scenario Cut Percentage' datatype='real' name='[Scenario_Cut_Percentage]' role='measure' type='quantitative' />
+            <column caption='Stockout Risk Percent' datatype='real' name='[Stockout_Risk_Percent]' role='measure' type='quantitative' />
+            <column-instance column='[Scenario_Cut_Percentage]' derivation='None' name='[none:Scenario_Cut_Percentage:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Stockout_Risk_Percent]' derivation='Sum' name='[sum:Stockout_Risk_Percent:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[none:Scenario_Cut_Percentage:ok]'>
+            <groupfilter function='member' level='[none:Scenario_Cut_Percentage:ok]' member='0.14999999999999999' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0m6xe2v1yfmif917v4vo30o95iyk].[none:Scenario_Cut_Percentage:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Stockout_Risk_Percent:qk]' value='p0.00%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Stockout_Risk_Percent:qk]' />
+            </encodings>
+            <customized-label>
+              <formatted-text>
+                <run fontcolor='#59a14f' fontname='Tableau Bold' fontsize='26'><![CDATA[<[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Stockout_Risk_Percent:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#59a14f' fontname='Tableau Bold' fontsize='10'>Projected Stockout Risk</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{66B8A4F1-FFBB-4F20-BC29-985509C04EE2}' />
+    </worksheet>
+    <worksheet name='Trade Off Analysis'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='OpVaR_Simulation_Results_CLEAN' name='federated.0m6xe2v1yfmif917v4vo30o95iyk' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0m6xe2v1yfmif917v4vo30o95iyk'>
+            <column caption='Cash Released USD' datatype='integer' name='[Cash_Released_USD]' role='measure' type='quantitative' />
+            <column caption='Scenario Cut Percentage' datatype='real' name='[Scenario_Cut_Percentage]' role='measure' type='quantitative' />
+            <column caption='Stockout Risk Percent' datatype='real' name='[Stockout_Risk_Percent]' role='measure' type='quantitative' />
+            <column-instance column='[Scenario_Cut_Percentage]' derivation='None' name='[none:Scenario_Cut_Percentage:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Cash_Released_USD]' derivation='Sum' name='[sum:Cash_Released_USD:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Stockout_Risk_Percent]' derivation='Sum' name='[sum:Stockout_Risk_Percent:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[none:Scenario_Cut_Percentage:qk]' scope='cols' value='false' />
+            <encoding attr='space' class='0' field='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Stockout_Risk_Percent:qk]' field-type='quantitative' fold='true' max='0.47580780793007121' min='-0.094967737904932764' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[none:Scenario_Cut_Percentage:qk]' field-type='quantitative' max='0.32549908301204666' min='0.0064110342568653098' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Cash_Released_USD:qk]' field-type='quantitative' max='3154405' min='-629599' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[none:Scenario_Cut_Percentage:qk]' value='p0%' />
+            <format attr='text-format' field='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Cash_Released_USD:qk]' value='C1033%' />
+            <format attr='text-format' field='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Stockout_Risk_Percent:qk]' value='*0%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[:Measure Names]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Scenario: Cutting Inventory by&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0m6xe2v1yfmif917v4vo30o95iyk].[none:Scenario_Cut_Percentage:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Benefit: </run>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Cash_Released_USD:qk]>]]></run>
+                <run bold='true'>Æ  </run>
+                <run fontcolor='#757575'>Cash Unlocked</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Risk:</run>
+                <run bold='true'><![CDATA[<[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Stockout_Risk_Percent:qk]> ]]></run>
+                <run fontcolor='#757575'>Probability of Failure</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Cash_Released_USD:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[:Measure Names]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Scenario: Cutting Inventory by&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0m6xe2v1yfmif917v4vo30o95iyk].[none:Scenario_Cut_Percentage:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Benefit: </run>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Cash_Released_USD:qk]>]]></run>
+                <run bold='true'>Æ  </run>
+                <run fontcolor='#757575'>Cash Unlocked</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Risk:</run>
+                <run bold='true'><![CDATA[<[federated.0m6xe2v1yfmif917v4vo30o95iyk].[avg:Stockout_Risk_Percent:qk]> ]]></run>
+                <run fontcolor='#757575'>Probability of Failure</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Stockout_Risk_Percent:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[:Measure Names]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run fontcolor='#757575'>Scenario: Cutting Inventory by&#9;</run>
+                <run bold='true'><![CDATA[<[federated.0m6xe2v1yfmif917v4vo30o95iyk].[none:Scenario_Cut_Percentage:qk]>]]></run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Benefit: </run>
+                <run bold='true' fontcolor='#000000'><![CDATA[<[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Cash_Released_USD:qk]>]]></run>
+                <run bold='true'>Æ  </run>
+                <run fontcolor='#757575'>Cash Unlocked</run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#757575'>Risk:</run>
+                <run bold='true'><![CDATA[<[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Stockout_Risk_Percent:qk]>]]></run>
+                <run bold='true'>Æ </run>
+                <run fontcolor='#757575'>Probability of Failure</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='2' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Cash_Released_USD:qk] + [federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Stockout_Risk_Percent:qk])</rows>
+        <cols>[federated.0m6xe2v1yfmif917v4vo30o95iyk].[none:Scenario_Cut_Percentage:qk]</cols>
+      </table>
+      <simple-id uuid='{D83808D1-6569-4472-9119-D5AF3ADD3850}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Executive Summary: Liquidity Optimization'>
+      <style>
+        <style-rule element='dash-text'>
+          <format attr='text-align' id='dash-text_13' value='auto' />
+        </style-rule>
+      </style>
+      <size maxheight='900' maxwidth='1600' minheight='900' minwidth='1600' preset-index='8' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98222' id='11' param='horz' type-v2='layout-flow' w='99000' x='500' y='889'>
+            <zone h='98222' id='9' type-v2='layout-basic' w='77125' x='500' y='889'>
+              <zone h='12555' id='3' type-v2='text' w='77125' x='500' y='889'>
+                <formatted-text>
+                  <run bold='true' fontcolor='#4e79a7' fontsize='24'>PROJECT OPVAR: Working Capital Optimization Model</run>
+                  <run>Æ&#10;</run>
+                  <run fontcolor='#818b91' fontsize='12'>Stochastic Simulation of 10,000 Inventory Scenarios | Market: Nairobi</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='85667' id='5' param='vert' type-v2='layout-flow' w='77125' x='500' y='13444'>
+                <zone fixed-size='97' h='11667' id='6' is-fixed='true' name='KPI Cash' show-title='false' w='77125' x='500' y='13444'>
+                  <layout-cache fixed-size-w='260' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='96' h='11556' id='7' is-fixed='true' name='KPI Risk' show-title='false' w='77125' x='500' y='25111'>
+                  <layout-cache type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='62444' id='8' name='Trade Off Analysis' w='77125' x='500' y='36667'>
+                  <layout-cache minheight='144' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+            <zone fixed-size='350' h='98222' id='10' is-fixed='true' param='vert' type-v2='layout-flow' w='21875' x='77625' y='889'>
+              <zone h='7333' id='12' name='Trade Off Analysis' pane-specification-id='1' param='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[:Measure Names]' type-v2='color' w='21875' x='77625' y='889'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='24333' id='13' type-v2='text' w='22563' x='77688' y='44000'>
+          <formatted-text>
+            <run fontcolor='#4e79a7' fontsize='12'>STRATEGIC RECOMMENDATION:</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#000000' fontsize='10'>The model identifies a &quot;Safe Zone&quot; up to 15% inventory reduction.</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#000000' fontsize='10'>-</run>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='10'>Action: </run>
+            <run fontalignment='1' fontcolor='#000000' fontsize='10'>Reduce safety stock on stable SKUs.</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#000000' fontsize='10'>-</run>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='10'>Impact: </run>
+            <run fontalignment='1' fontcolor='#000000' fontsize='10'>Release $1.5M in cash immediately.</run>
+            <run fontalignment='1'>Æ&#10;</run>
+            <run fontalignment='1' fontcolor='#000000' fontsize='10'>-</run>
+            <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='10'>Warning: </run>
+            <run fontalignment='1' fontcolor='#000000' fontsize='10'> Cuts &gt;20% trigger exponential risk.</run>
+          </formatted-text>
+          <zone-style>
+            <format attr='border-color' value='#c0c0c0' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='17' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98222' id='16' param='vert' type-v2='layout-flow' w='99000' x='500' y='889'>
+                <zone h='12555' id='3' type-v2='text' w='77125' x='500' y='889'>
+                  <formatted-text>
+                    <run bold='true' fontcolor='#4e79a7' fontsize='24'>PROJECT OPVAR: Working Capital Optimization Model</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#818b91' fontsize='12'>Stochastic Simulation of 10,000 Inventory Scenarios | Market: Nairobi</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='97' h='11667' id='6' is-fixed='true' name='KPI Cash' show-title='false' w='77125' x='500' y='13444'>
+                  <layout-cache fixed-size-w='260' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='96' h='11556' id='7' is-fixed='true' name='KPI Risk' show-title='false' w='77125' x='500' y='25111'>
+                  <layout-cache type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='62444' id='8' is-fixed='true' name='Trade Off Analysis' w='77125' x='500' y='36667'>
+                  <layout-cache minheight='144' type-h='scalable' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='7333' id='12' name='Trade Off Analysis' pane-specification-id='1' param='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[:Measure Names]' type-v2='color' w='21875' x='77625' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='24333' id='13' type-v2='text' w='22563' x='77688' y='44000'>
+                  <formatted-text>
+                    <run fontcolor='#4e79a7' fontsize='12'>STRATEGIC RECOMMENDATION:</run>
+                    <run>Æ&#10;</run>
+                    <run fontcolor='#000000' fontsize='10'>The model identifies a &quot;Safe Zone&quot; up to 15% inventory reduction.</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#000000' fontsize='10'>-</run>
+                    <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='10'>Action: </run>
+                    <run fontalignment='1' fontcolor='#000000' fontsize='10'>Reduce safety stock on stable SKUs.</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#000000' fontsize='10'>-</run>
+                    <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='10'>Impact: </run>
+                    <run fontalignment='1' fontcolor='#000000' fontsize='10'>Release $1.5M in cash immediately.</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#000000' fontsize='10'>-</run>
+                    <run bold='true' fontalignment='1' fontcolor='#000000' fontsize='10'>Warning: </run>
+                    <run fontalignment='1' fontcolor='#000000' fontsize='10'> Cuts &gt;20% trigger exponential risk.</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#c0c0c0' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='1' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{AE24EF16-36D8-4575-94E0-27EE1EBF9354}' />
+    </dashboard>
+  </dashboards>
+  <windows show-side-pane='false' source-height='51'>
+    <window class='worksheet' name='Trade Off Analysis'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0m6xe2v1yfmif917v4vo30o95iyk].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0m6xe2v1yfmif917v4vo30o95iyk].[:Measure Names]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{4A52D2D9-CAC9-4EBF-B0EF-F1CB729C7B70}' />
+    </window>
+    <window class='worksheet' name='KPI Cash'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0m6xe2v1yfmif917v4vo30o95iyk].[none:Scenario_Cut_Percentage:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{1F5531B7-E91C-4626-8BB4-3A0FF9EFED6B}' />
+    </window>
+    <window class='worksheet' name='KPI Risk'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0m6xe2v1yfmif917v4vo30o95iyk].[none:Scenario_Cut_Percentage:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{0D707DA9-E4CD-470B-B353-4A159F122E20}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Executive Summary: Liquidity Optimization'>
+      <viewpoints>
+        <viewpoint name='KPI Cash' />
+        <viewpoint name='KPI Risk' />
+        <viewpoint name='Trade Off Analysis'>
+          <selection-collection>
+            <node-selection select-tuples='false'>
+              <oriented-node-reference orientation='vertical'>
+                <node-reference>
+                  <axis>[federated.0m6xe2v1yfmif917v4vo30o95iyk].[sum:Stockout_Risk_Percent:qk]</axis>
+                </node-reference>
+                <page-reference />
+              </oriented-node-reference>
+            </node-selection>
+          </selection-collection>
+          <highlight>
+            <color-one-way>
+              <field>[federated.0m6xe2v1yfmif917v4vo30o95iyk].[:Measure Names]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+      </viewpoints>
+      <active id='8' />
+      <simple-id uuid='{A953601C-AEE5-4589-B916-438FB65F8469}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Executive Summary: Liquidity Optimization' width='192'>
+      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
+      PRf/HzbgmgDEtzwiAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='70' name='KPI Cash' width='192'>
+      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
+      rkJggg==
+    </thumbnail>
+    <thumbnail height='70' name='KPI Risk' width='164'>
+      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
+      mlHB+PQAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Trade Off Analysis' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
